@@ -35,7 +35,8 @@ public class FileWork {
 
                 if (!lowerToken.startsWith("w")) {
                     continue;
-                };
+                }
+
                 resultList.add(lowerToken);
             }
 
