@@ -28,17 +28,20 @@ public class FileWork {
             }
 
             String[] stringTokens = builder.toString().split(fileRegex);
-            List<String> wList = new ArrayList<>();
+            List<String> resultList = new ArrayList<>();
 
             for (String token : stringTokens) {
                 String lowerToken = token.trim().toLowerCase();
-                if (!lowerToken.startsWith("w")) continue;
-                wList.add(lowerToken);
+
+                if (!lowerToken.startsWith("w")) {
+                    continue;
+                };
+                resultList.add(lowerToken);
             }
 
-            wList.sort(Comparator.naturalOrder());
+            resultList.sort(Comparator.naturalOrder());
 
-            return wList.toArray(new String[0]);
+            return resultList.toArray(new String[0]);
 
         } catch (IOException e) {
             throw new RuntimeException("Can't read file", e);
